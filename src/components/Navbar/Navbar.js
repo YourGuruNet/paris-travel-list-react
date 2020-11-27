@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Navbar.scss';
+import { Link } from 'react-router-dom';
 
 export default class Navbar extends Component {
   state = {
@@ -25,19 +26,15 @@ export default class Navbar extends Component {
           </span>
         </button>
         <ul
-          className={
-            this.state.isOpen
-              ? 'navbar__menu show-nav'
-              : 'navbar__menu hide-nav'
-          }>
+          className={this.state.isOpen ? 'navbar__menu show-nav' : ' hide-nav'}>
           <li className='navbar__menu--links'>
-            <a href='/'>Home</a>
+            <Link to='/'>Home</Link>
           </li>
           <li className='navbar__menu--links'>
-            <a href='/'>Tours</a>
+            <Link to='/tour-list'>Tours</Link>
           </li>
           <li className='navbar__menu--links'>
-            <a href='/'>About us</a>
+            <Link to='/about'>About us</Link>
           </li>
         </ul>
       </nav>
