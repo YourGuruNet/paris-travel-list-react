@@ -1,0 +1,31 @@
+@import '../../App.scss';
+.about {
+  background-color: $main-color-dark-2;
+  width: 80%;
+  max-width: 144rem;
+  margin: 2rem auto;
+  display: border-box;
+
+  &__img {
+    width: 100%;
+    height: 60vh;
+    padding: 2rem;
+    object-fit: cover;
+  }
+  &__text {
+    padding: 2rem;
+    font-size: 2rem;
+    color: $main-color-light;
+  }
+  &__text--2 {
+    padding: 2rem;
+    font-size: 1.5rem;
+    color: $main-color-light;
+  }
+  &__header {
+    font-size: 5rem;
+    color: $main-color-light-2;
+    padding: 2rem;
+    text-align: center;
+  }
+}

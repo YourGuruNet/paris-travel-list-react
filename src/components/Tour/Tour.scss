@@ -1,0 +1,142 @@
+@import '../../App.scss';
+
+.tour {
+  border: solid 0.1rem $main-color-dark-2;
+  background-color: $main-color-dark-2;
+  position: relative;
+  width: 80%;
+  max-width: 140rem;
+  margin: 4rem auto;
+  transition: all 0.3s;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+
+  &:hover {
+    z-index: 999;
+    transform: scale(1.1);
+    box-shadow: 0.5rem 1rem 2rem $main-color-light;
+  }
+  &:hover .tour__button {
+    opacity: 1;
+  }
+
+  &__img {
+    width: 40rem;
+    padding: 2rem;
+  }
+  &__content {
+    padding: 2rem;
+  }
+
+  &__name {
+    color: $main-color-light-2;
+    font-size: 2.5rem;
+  }
+  &__info {
+    color: $main-color-light;
+    font-size: 1.3rem;
+    padding: 1rem 0;
+  }
+  &__price {
+    color: $main-color-light-2;
+    font-size: 2rem;
+  }
+  &__button {
+    color: $main-color-light-2;
+    border: none;
+    font-size: 2rem;
+    padding: 0.7rem 1rem;
+    position: absolute;
+    top: -1.9rem;
+    left: -1.5rem;
+    text-align: center;
+    display: inline-block;
+    background-color: rgba($main-color-dark, 0.7);
+    border-radius: 50%;
+    transition: all 0.3s;
+    opacity: 0;
+
+    &:hover {
+      color: $main-color-dark;
+      background-color: $main-color-light-2;
+    }
+  }
+  &__location {
+    color: $main-color-light-2;
+    background-color: transparent;
+    display: block;
+    border: none;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 1rem;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    &:hover {
+      transform: translateY(-0.3rem);
+      border-bottom: solid 0.2rem $main-color-light-2;
+    }
+    &:focus {
+      outline: none;
+      color: $main-color-dark;
+    }
+  }
+  @media screen and (max-width: 56.25em) {
+    grid-template-columns: none;
+
+    &__img {
+      grid-column: 1 / span 2;
+      width: 90%;
+      margin: 0 auto;
+    }
+    &__info {
+      hyphens: auto;
+      text-align: justify;
+    }
+    &__name {
+      text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 25em) {
+    width: 85%;
+    &__img {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0.5rem;
+    }
+    &__content {
+      padding: 0.5rem;
+    }
+    &__button {
+      font-size: 1.5rem;
+      padding: 0.5rem 0.8rem;
+    }
+  }
+}
+
+.location__container {
+  grid-column: 1 / span 2;
+  padding: 2rem;
+  width: 100%;
+  animation: showLocation 1s ease-in-out;
+
+  &__map {
+    border: none;
+    width: 100%;
+  }
+  @media screen and (max-width: 56.25em) {
+    padding-top: 0.5rem;
+  }
+  @media screen and (max-width: 25em) {
+    padding: 0.5rem;
+  }
+}
+
+@keyframes showLocation {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
